@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Noticias - Inicio{% endblock %}
+
+{% block header_title %}Sección de Noticias Tecnológicas{% endblock %}
+{% block header_subtitle %}Mantente al día con lo último en desarrollo y tecnología{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2 class="border-bottom pb-2 text-primary mb-0">Últimas Publicaciones</h2>
+        <div class="d-flex gap-2">
+            <form class="d-flex" role="search" method="get" action="{% url 'noticias:buscar' %}">
+                <input class="form-control form-control-sm me-2" type="search" name="q" placeholder="Buscar noticia..." value="{{ termino|default:'' }}">
+                <button class="btn btn-outline-primary btn-sm" type="submit">Buscar</button>
+            </form>
+            <a href="{% url 'noticias:agregar' %}" class="btn btn-primary btn-sm text-nowrap">+ Agregar</a>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    {% for noticia in noticias %}
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <img src="{% static 'img/' %}{{ noticia.imagen }}" class="card-img-top" alt="{{ noticia.titulo }}" style="height: 200px; object-fit: cover;">
+
+            <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge bg-info text-dark">{{ noticia.categoria.nombre }}</span>
+                    <small class="text-muted">{{ noticia.fecha }}</small>
+                </div>
+
+                <h5 class="card-title">{{ noticia.titulo }}</h5>
+                <p class="card-text flex-grow-1">{{ noticia.resumen }}</p>
+
+                {% if noticia.destacado %}
+                    <span class="badge bg-warning text-dark mb-2 w-auto me-auto">★ Destacado</span>
+                {% endif %}
+
+                <div class="d-flex gap-2 mt-2">
+                    <a href="{% url 'noticias:detalle' noticia.id %}" class="btn btn-outline-primary btn-sm">Leer más</a>
+                    <a href="{% url 'noticias:modificar' noticia.id %}" class="btn btn-outline-secondary btn-sm">Modificar</a>
+                    <a href="{% url 'noticias:eliminar' noticia.id %}" class="btn btn-outline-danger btn-sm">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <p class="text-muted">No hay noticias disponibles en este momento.</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

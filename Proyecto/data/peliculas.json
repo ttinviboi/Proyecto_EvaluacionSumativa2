@@ -1,0 +1,68 @@
+[
+    {
+        "id": 101,
+        "titulo": "Inception",
+        "director": "Christopher Nolan",
+        "genero": "Ciencia Ficción",
+        "anio": 2010,
+        "calificacion": 8.8,
+        "sinopsis": "Un ladrón que roba secretos corporativos a través del uso de la tecnología de intercambio de sueños recibe la tarea inversa de plantar una idea en la mente de un CEO.",
+        "estreno": true,
+        "imagen": "cine/inception.jpg"
+    },
+    {
+        "id": 102,
+        "titulo": "Interstellar",
+        "director": "Christopher Nolan",
+        "genero": "Ciencia Ficción",
+        "anio": 2014,
+        "calificacion": 8.6,
+        "sinopsis": "Un grupo de exploradores viaja a través de un agujero de gusano en el espacio en un intento por garantizar la supervivencia de la humanidad.",
+        "estreno": false,
+        "imagen": "cine/cine.png"
+    },
+    {
+        "id": 103,
+        "titulo": "Dune: Parte Dos",
+        "director": "Denis Villeneuve",
+        "genero": "Ciencia Ficción",
+        "anio": 2024,
+        "calificacion": 8.5,
+        "sinopsis": "Paul Atreides se une a los Fremen en una travesía por Arrakis mientras enfrenta decisiones que pueden cambiar el destino de la galaxia.",
+        "estreno": false,
+        "imagen": "cine/cine.png"
+    },
+    {
+        "id": 104,
+        "titulo": "Parásitos",
+        "director": "Bong Joon-ho",
+        "genero": "Drama",
+        "anio": 2019,
+        "calificacion": 8.5,
+        "sinopsis": "Dos familias de realidades muy distintas quedan conectadas por una relación laboral que transforma la vida de ambas.",
+        "estreno": false,
+        "imagen": "cine/cine.png"
+    },
+    {
+        "id": 105,
+        "titulo": "El viaje de Chihiro",
+        "director": "Hayao Miyazaki",
+        "genero": "Fantasía",
+        "anio": 2001,
+        "calificacion": 8.6,
+        "sinopsis": "Chihiro entra en un mundo fantástico y debe encontrar la forma de rescatar a sus padres y regresar a casa.",
+        "estreno": false,
+        "imagen": "cine/cine.png"
+    },
+    {
+        "id": 106,
+        "titulo": "Matrix",
+        "director": "Lana y Lilly Wachowski",
+        "genero": "Ciencia Ficción",
+        "anio": 1999,
+        "calificacion": 8.7,
+        "sinopsis": "Un programador descubre que la realidad que conoce es una simulación y se une a quienes intentan liberarse de ella.",
+        "estreno": false,
+        "imagen": "cine/cine.png"
+    }
+]

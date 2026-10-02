@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "titulo": "Lanzamiento de Django 5.0",
+        "categoria": "Desarrollo Web",
+        "fecha": "2026-03-01",
+        "resumen": "Django introduce mejoras significativas en el rendimiento de vistas asíncronas y componentes de plantilla.",
+        "contenido": "La nueva versión de Django trae consigo soporte extendido para campos de bases de datos generados y mejoras en la interfaz de administración...",
+        "destacado": true,
+        "imagen": "noticias/django.jfif"
+    },
+    {
+        "id": 2,
+        "titulo": "El impacto de la Inteligencia Artificial en el Software",
+        "categoria": "Inteligencia Artificial",
+        "fecha": "2026-03-03",
+        "resumen": "Cómo las herramientas de asistencia por IA están transformando los flujos de trabajo de los desarrolladores.",
+        "contenido": "Las herramientas LLM permiten optimizar la escritura de código, generación de pruebas unitarias y maquetado de interfaces...",
+        "destacado": false,
+        "imagen": "noticias/noticias.png"
+    },
+    {
+        "id": 3,
+        "titulo": "Buenas prácticas para proteger secretos en Django",
+        "categoria": "Seguridad Web",
+        "fecha": "2026-09-26",
+        "resumen": "Las claves y contraseñas deben mantenerse fuera del código y cargarse desde variables de entorno protegidas.",
+        "contenido": "Una configuración segura separa los valores sensibles del repositorio. En Django conviene mantener DEBUG desactivado en producción, limitar ALLOWED_HOSTS, proteger el archivo .env con permisos adecuados y evitar incluirlo en commits o paquetes públicos. La rotación de credenciales y el uso de HTTPS reducen el impacto de una exposición accidental.",
+        "destacado": true,
+        "imagen": "noticias/noticias.png"
+    },
+    {
+        "id": 4,
+        "titulo": "Cómo se relacionan los modelos con las tablas de una aplicación",
+        "categoria": "Desarrollo Web",
+        "fecha": "2026-09-25",
+        "resumen": "Django ORM traduce los modelos y sus relaciones en consultas y estructuras persistentes en la base de datos.",
+        "contenido": "Cada modelo describe los campos de una entidad. Una ForeignKey expresa una relación entre registros y permite navegar entre objetos relacionados desde Python. Las migraciones llevan los cambios del modelo al esquema de la base de datos, mientras las consultas ORM permiten listar y filtrar información sin construir SQL manual en cada vista.",
+        "destacado": false,
+        "imagen": "noticias/django.jfif"
+    },
+    {
+        "id": 5,
+        "titulo": "Despliegue web: tareas antes de publicar una aplicación",
+        "categoria": "Cloud Computing",
+        "fecha": "2026-09-24",
+        "resumen": "Una publicación en la nube requiere revisar servicios, puertos, archivos estáticos, base de datos y configuración de producción.",
+        "contenido": "Antes de publicar, se debe validar que la aplicación arranque como servicio, que el servidor web enrute las solicitudes, que la base de datos sea accesible solo desde donde se necesita y que los archivos estáticos se sirvan correctamente. También es conveniente revisar registros de servicio, copias de seguridad, reglas de red y uso de HTTPS.",
+        "destacado": false,
+        "imagen": "noticias/noticias.png"
+    },
+    {
+        "id": 6,
+        "titulo": "Git ayuda a mantener trazabilidad durante el desarrollo",
+        "categoria": "Desarrollo Web",
+        "fecha": "2026-09-23",
+        "resumen": "Los commits pequeños y descriptivos facilitan revisar los cambios y recuperar versiones anteriores del proyecto.",
+        "contenido": "Un historial claro muestra cómo evoluciona una aplicación y permite colaborar con menos riesgo. Conviene excluir entornos virtuales, archivos de configuración privados, bases locales y artefactos temporales mediante .gitignore. El repositorio remoto facilita distribuir el código y desplegar una revisión reproducible.",
+        "destacado": false,
+        "imagen": "noticias/django.jfif"
+    }
+]

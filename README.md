@@ -1,16 +1,12 @@
 # Proyecto Evaluación Sumativa 2
 
-Portal modular con Django para administrar noticias y una cartelera de cine. Incluye modelos relacionales, migraciones, consultas ORM y Django Admin.
+Portal modular con Django para administrar noticias y una cartelera de cine. El repositorio incluye el código fuente descomprimido en `Proyecto/`, el paquete ZIP descargable, las migraciones, la guía del proyecto y la documentación del uso de IA.
 
-## Código fuente
+## Código fuente y entrega
 
-Descarga el paquete [`Proyecto_EvaluacionSumativa2_Completado.zip`](Proyecto_EvaluacionSumativa2_Completado.zip). Contiene el proyecto completo dentro de `Proyecto/`.
+- Código fuente: [carpeta Proyecto](Proyecto/)
+- Migraciones: `Proyecto/noticias/migrations/0001_initial.py` y `Proyecto/cine/migrations/0001_initial.py`
+- Uso de IA: [Proyecto/DOCUMENTACION_IA.md](Proyecto/DOCUMENTACION_IA.md)
+- Paquete ZIP: [Proyecto_EvaluacionSumativa2_Completado.zip](Proyecto_EvaluacionSumativa2_Completado.zip)
 
-```bash
-git clone https://github.com/ttinviboi/Proyecto_EvaluacionSumativa2.git
-cd Proyecto_EvaluacionSumativa2
-unzip Proyecto_EvaluacionSumativa2_Completado.zip
-cd Proyecto
-```
-
-Consulta `Proyecto/README.md` para dependencias, variables de entorno, migraciones, carga de datos, administración y despliegue. El archivo `.env` con credenciales no está en el repositorio: crea el entorno desde `.env.example` y genera una `SECRET_KEY` propia.
+Para ejecutar el proyecto, consulta [Proyecto/README.md](Proyecto/README.md). El archivo `.env` con credenciales no está en el repositorio; crea el entorno desde `.env.example` y genera una `SECRET_KEY` propia.

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ accion }} - En construcción{% endblock %}
+{% block header_title %}{{ accion }}{% endblock %}
+{% block header_subtitle %}Funcionalidad disponible en la próxima evaluación{% endblock %}
+
+{% block content %}
+<div class="alert alert-info">
+    Esta operación (<strong>{{ accion }}</strong>) es solo un marcador de posición visual por ahora.
+    La implementación funcional de las operaciones CRUD desde la interfaz se realizará en la siguiente evaluación sumativa.
+</div>
+<a href="{% url 'cine:cartelera' %}" class="btn btn-secondary">← Volver a Cartelera</a>
+{% endblock %}
