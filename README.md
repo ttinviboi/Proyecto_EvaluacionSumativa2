@@ -1,12 +1,16 @@
-# Proyecto Evaluación Sumativa 2
+# Proyecto Evaluación Sumativa 3
 
-Portal modular con Django para administrar noticias y una cartelera de cine. El repositorio incluye el código fuente descomprimido en `Proyecto/`, el paquete ZIP descargable, las migraciones, la guía del proyecto y la documentación del uso de IA.
+Aplicación Django de Noticias y Cine con inicio de sesión, roles, recuperación de contraseña, mantenedores CRUD, reservas y persistencia relacional.
 
-## Código fuente y entrega
+## Código y documentación
 
-- Código fuente: [carpeta Proyecto](Proyecto/)
-- Migraciones: `Proyecto/noticias/migrations/0001_initial.py` y `Proyecto/cine/migrations/0001_initial.py`
-- Uso de IA: [Proyecto/DOCUMENTACION_IA.md](Proyecto/DOCUMENTACION_IA.md)
-- Paquete ZIP: [Proyecto_EvaluacionSumativa2_Completado.zip](Proyecto_EvaluacionSumativa2_Completado.zip)
+La instancia desplegada de referencia es http://44.223.101.218/.
 
-Para ejecutar el proyecto, consulta [Proyecto/README.md](Proyecto/README.md). El archivo `.env` con credenciales no está en el repositorio; crea el entorno desde `.env.example` y genera una `SECRET_KEY` propia.
+- Código fuente: [Proyecto/](Proyecto/)
+- Paquete listo para descargar: [Proyecto_EvaluacionSumativa3_Completado.zip](Proyecto_EvaluacionSumativa3_Completado.zip)
+- Guía de instalación, perfiles y ejecución: [Proyecto/README.md](Proyecto/README.md)
+- Documentación del apoyo de IA: [Proyecto/DOCUMENTACION_IA.md](Proyecto/DOCUMENTACION_IA.md)
+- Migración de reservas: [Proyecto/gestion/migrations/0001_initial.py](Proyecto/gestion/migrations/0001_initial.py)
+- Migraciones del dominio: `Proyecto/noticias/migrations/` y `Proyecto/cine/migrations/`
+
+El proyecto usa `.env.example` como plantilla. Nunca publiques `.env`, credenciales SMTP ni contraseñas de usuarios. La recuperación por correo requiere credenciales de un proveedor SMTP; el backend de consola es únicamente para desarrollo local.

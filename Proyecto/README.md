@@ -6,11 +6,11 @@ Consulta [DOCUMENTACION_IA.md](DOCUMENTACION_IA.md) para revisar el uso de IA, s
 
 ## Estado desplegado
 
-- Sitio: http://13.220.31.255/
-- Noticias: http://13.220.31.255/noticias/
-- Cine: http://13.220.31.255/cine/
-- Django Admin: http://13.220.31.255/admin/
-- phpMyAdmin: http://13.220.31.255/phpmyadmin/
+- Sitio: http://44.223.101.218/
+- Noticias: http://44.223.101.218/noticias/
+- Cine: http://44.223.101.218/cine/
+- Django Admin: http://44.223.101.218/admin/
+- phpMyAdmin: http://44.223.101.218/phpmyadmin/
 - Repositorio: https://github.com/ttinviboi/Proyecto_EvaluacionSumativa2
 - Datos de demostración actuales: 6 noticias en 4 categorías y 6 películas en 3 géneros.
 
@@ -91,3 +91,45 @@ El informe técnico incluye capturas del sitio, AWS EC2, las migraciones y servi
 ## Uso de inteligencia artificial
 
 Se utilizó IA como apoyo para contrastar la pauta con el proyecto, identificar brechas, completar documentación y preparar datos de demostración. Las respuestas se aplicaron al código y se verificaron contra la estructura de modelos, migraciones y despliegue.
+
+
+## Evaluación Sumativa 3: acceso y gestión
+
+La aplicación añade inicio y cierre de sesión, paneles diferenciados, gestión de cuentas por perfil, mantenedores propios para categorías y géneros, y reservas que relacionan usuario y película. La interfaz administrativa se implementa con Django Templates y formularios; Django Admin no está habilitado como ruta de la aplicación. Revisa [DOCUMENTACION_IA.md](DOCUMENTACION_IA.md) para los prompts y el uso documentado de IA.
+
+### Perfiles y permisos
+
+- **Administrador:** acceso a los paneles, usuarios, mantenedores, eliminación y operación completa de reservas.
+- **Supervisor:** consulta/creación/edición de categorías y géneros, consulta de reservas y actualización de su estado. No elimina registros ni gestiona usuarios.
+- **Administrativo:** crea reservas y consulta únicamente sus propias reservas; no entra a mantenedores ni a gestión de cuentas.
+
+Los grupos y permisos se inicializan al ejecutar las migraciones. `python manage.py crear_perfiles` permite recrear los grupos. El primer superusuario funciona como administrador. Desde su panel puede crear cuentas Supervisor y Administrativo, asignando el grupo correspondiente.
+
+### Recuperación de contraseña por correo
+
+Django genera tokens de un solo uso con su flujo integrado. Para desarrollo, el correo se imprime en la consola con `EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend`. Para recibirlo en una bandeja real, define SMTP en el `.env` privado; por ejemplo:
+
+```env
+EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
+EMAIL_HOST=smtp.example.com
+EMAIL_PORT=587
+EMAIL_HOST_USER=cuenta_smtp
+EMAIL_HOST_PASSWORD=secreto_smtp
+EMAIL_USE_TLS=True
+DEFAULT_FROM_EMAIL=portal@example.com
+```
+
+No guardes contraseñas SMTP ni de usuarios en GitHub. En la instancia de AWS debe configurarse un proveedor SMTP autorizado antes de demostrar recepción real del mensaje.
+
+### Nueva transacción y migración
+
+`gestion.Reserva` relaciona al usuario autenticado y una película, registra fecha, cantidad y estado, evita reservas duplicadas para la misma función y restringe fechas pasadas. Su migración es `gestion/migrations/0001_initial.py`. Ejecuta:
+
+```bash
+python manage.py migrate
+python manage.py crear_perfiles
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+Entra por `/cuentas/ingresar/`; el panel principal está en `/`. La recuperación comienza en `/cuentas/recuperar/`. Los dos mantenedores están en `/categorias/` y `/generos/`; las reservas en `/reservas/`.

@@ -32,3 +32,10 @@ Para mostrar o aplicar las migraciones desde la carpeta `Proyecto/`:
 python manage.py showmigrations
 python manage.py migrate
 ```
+
+
+## Apoyo de IA para la Evaluación Sumativa 3
+
+Se usó ChatGPT/Codex para desglosar la pauta en componentes de autenticación, grupos y permisos, paneles por perfil, recuperación con token por correo, mantenedores CRUD, una transacción y su documentación. Se aplicaron sugerencias al código de `gestion/`, al enrutamiento de cuentas, a los formularios Django y a las plantillas Bootstrap. La transacción seleccionada es la reserva de cine, relacionada con el usuario autenticado y una película; el sistema valida fecha, cantidad y duplicados.
+
+El comportamiento de SMTP depende de credenciales privadas que debe proporcionar y configurar el estudiante. El backend de consola se deja como opción de desarrollo; por sí solo no entrega un correo a una bandeja real. Los perfiles y sus restricciones se describen en el README y se implementan mediante grupos Django y controles del servidor.

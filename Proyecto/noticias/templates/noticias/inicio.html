@@ -15,7 +15,6 @@
                 <input class="form-control form-control-sm me-2" type="search" name="q" placeholder="Buscar noticia..." value="{{ termino|default:'' }}">
                 <button class="btn btn-outline-primary btn-sm" type="submit">Buscar</button>
             </form>
-            <a href="{% url 'noticias:agregar' %}" class="btn btn-primary btn-sm text-nowrap">+ Agregar</a>
         </div>
     </div>
 </div>
@@ -41,8 +40,6 @@
 
                 <div class="d-flex gap-2 mt-2">
                     <a href="{% url 'noticias:detalle' noticia.id %}" class="btn btn-outline-primary btn-sm">Leer más</a>
-                    <a href="{% url 'noticias:modificar' noticia.id %}" class="btn btn-outline-secondary btn-sm">Modificar</a>
-                    <a href="{% url 'noticias:eliminar' noticia.id %}" class="btn btn-outline-danger btn-sm">Eliminar</a>
                 </div>
             </div>
         </div>
